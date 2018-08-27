@@ -1,11 +1,12 @@
-CREATE DATABASE IF NOT EXISTS groceries;
-
-USE groceries;
-
-CREATE TABLE IF NOT EXISTS grocery_items (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  item CHAR(255) NOT NULL,
+-- create database
+CREATE DATABASE grocery_list;
+-- use database
+USE grocery_list;
+-- create table
+CREATE TABLE IF NOT EXISTS groceries (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
   quantity INT NOT NULL
 );
-
-INSERT INTO grocery_items (item, quantity) VALUES ("pizza", 4);
+-- insert sample item
+INSERT INTO groceries VALUES (1, "pizza", 5);
