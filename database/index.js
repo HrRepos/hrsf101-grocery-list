@@ -30,16 +30,5 @@ const addOneGrocery = function(item, whenAdded) {
 }
 
 
-addOneGrocery({name: 'egg rolls', quantity: 500 }, function(error){
-  if(error) {
-    console.log('something went wrong', error)
-  } else {
-    console.log('item added!');
-  }
-});
-
-// function that inserts one grocery into table
-
-
 module.exports.getAllGroceries = getAllGroceries;
 module.exports.addOneGrocery = addOneGrocery;
