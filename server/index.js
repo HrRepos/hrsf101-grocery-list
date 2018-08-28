@@ -3,7 +3,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+
 const controllers = require('../database/index.js');
+
+// to fix cross origin errors
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.use((req, res, next) => {
   console.log(`${req.method} request received at ${req.url}`);
@@ -25,7 +29,7 @@ app.get('/groceries', (req, res) => {
 app.post('/groceries', bodyParser.json(), (req, res) => {
   controllers.addOneGrocery(req.body, (err) => {
     if (err) {
-      res.status(500).send();
+      res.status(500).send(err);
     } else {
       res.status(201).send();
     }

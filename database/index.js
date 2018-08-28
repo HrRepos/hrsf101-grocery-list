@@ -18,6 +18,7 @@ const getAllGroceries = function (whenGroceries) {
     }
   });
 };
+
 // item should be { name: '', quanity: # }
 const addOneGrocery = function(item, whenAdded) {
   connection.query(`INSERT INTO groceries (name, quantity) VALUES (?, ?);`, [item.name, item.quantity], function(error, results, fields) {
